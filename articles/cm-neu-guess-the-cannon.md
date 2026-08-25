@@ -1,8 +1,12 @@
 ---
-layout: sohps
-title: Cannon Guessing
+layout: default
+is_article: true
+title: "Can you guess the cannon? Or cat?"
+description: "Test your cannon cat guessing skills"
+heading: "Can you guess it right? It's up to you."
+subheading: "A one-shot attempt to get your guess right."
+date: 2025-07-18
 ---
-
 <section class="guess-game" aria-labelledby="guess-title">
   <h1 id="guess-title">Guess the Number</h1>
   <p class="guess-help">Pick a number from 1 to 100. Submit once to see if you guessed right.</p>

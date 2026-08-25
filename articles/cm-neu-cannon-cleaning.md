@@ -5,7 +5,7 @@ title: Choose a Gentle Cleaning Method
 description: Match the cleaning method to the goal instead of removing every trace of marine growth.
 heading: Clean Only What the Work Requires
 subheading: A controlled test patch can answer more questions than aggressive cleaning across the whole surface.
-date: 2026-08-18
+date: 2024-08-18
 ---
 
 Underwater cleaning should have a specific purpose. The goal might be to reveal a maker's mark, inspect a crack, or prepare a small area for measurement. It should not automatically mean making the entire cannon look new.

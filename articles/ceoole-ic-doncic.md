@@ -5,7 +5,7 @@ title: Luka Doncic
 description: Best player in the NBA
 heading: Yes, I'm the best player in da league
 subheading: Cartel Info
-date: 2023-28-09
+date: 2023-12-09
 ---
 
 ## My Name is Jimbo James

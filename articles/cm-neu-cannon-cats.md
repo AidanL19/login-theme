@@ -5,7 +5,7 @@ title: "Learn about Cannon Cats"
 description: "Cats love cannons. Learn all about it."
 heading: "Cannons - Where Cats Love to Live"
 subheading: "A look at the underworld of cats living in cannons."
-date: 2025-07-18
+date: 2025-07-19
 ---
 
 <section class="cats-game" aria-labelledby="cats-title">

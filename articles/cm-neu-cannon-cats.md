@@ -1,10 +1,10 @@
 ---
 layout: default
 is_article: true
-title: Learn about Cannon Cats
-description: Cats love cannons. Learn all about it.
-heading: Cannons: Where Cats Love to Live
-subheading: A look at the underworld of cats living in cannons.
+title: "Learn about Cannon Cats"
+description: "Cats love cannons. Learn all about it."
+heading: "Cannons - Where Cats Love to Live"
+subheading: "A look at the underworld of cats living in cannons."
 date: 2025-07-18
 ---
 

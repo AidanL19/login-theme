@@ -1,0 +1,86 @@
+<section class="stock-news" aria-label="Simulated marine market news">
+    <style>
+        .stock-news {
+            background: #0e1220;
+            color: #e6e9f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .stock-news .news-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            background: #171c30;
+            color: #9fd8ff;
+            border-bottom: 1px solid #232945;
+        }
+        .stock-news .news-list {
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        .stock-news .news-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            padding: 0.45rem 1rem;
+            border-bottom: 1px solid #1b2138;
+            font-size: 0.9rem;
+        }
+        .stock-news .news-item:last-child {
+            border-bottom: none;
+        }
+        .stock-news .news-time {
+            flex-shrink: 0;
+            color: #7a8399;
+            font-size: 0.78rem;
+            width: 4.5rem;
+        }
+        .stock-news .news-ticker {
+            flex-shrink: 0;
+            font-weight: 700;
+            color: #ffe066;
+        }
+        .stock-news .news-headline {
+            flex: 1;
+        }
+        .stock-news .news-note {
+            display: block;
+            text-align: right;
+            font-size: 0.7rem;
+            opacity: 0.6;
+            padding: 0.3rem 1rem 0.5rem;
+        }
+    </style>
+    <div class="news-label"><i class="lni lni-headphone-alt"></i> Market news</div>
+    <ul class="news-list">
+        <li class="news-item">
+            <span class="news-time">09:31</span>
+            <span class="news-ticker">FATH</span>
+            <span class="news-headline">Fathom Holdings beats earnings estimates, shares climb on deep-sea contract news.</span>
+        </li>
+        <li class="news-item">
+            <span class="news-time">10:04</span>
+            <span class="news-ticker">RUST</span>
+            <span class="news-headline">Rustwater Corp slides after reporting supply chain delays in Q3 outlook.</span>
+        </li>
+        <li class="news-item">
+            <span class="news-time">11:22</span>
+            <span class="news-ticker">NAUT</span>
+            <span class="news-headline">Nautical Systems announces new partnership to expand undersea cable network.</span>
+        </li>
+        <li class="news-item">
+            <span class="news-time">12:47</span>
+            <span class="news-ticker">REEF</span>
+            <span class="news-headline">Reef Analytics jumps on strong reef-monitoring subscription growth.</span>
+        </li>
+        <li class="news-item">
+            <span class="news-time">14:15</span>
+            <span class="news-ticker">TIDE</span>
+            <span class="news-headline">Tidewater Industries dips slightly amid broader market pullback.</span>
+        </li>
+    </ul>
+    <span class="news-note">Simulated headlines</span>
+</section>

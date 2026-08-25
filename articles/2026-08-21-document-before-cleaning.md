@@ -4,6 +4,7 @@ description: A simple pre-cleaning survey keeps important surface details from b
 heading: Start With a Careful Survey
 subheading: The most useful cleaning tool is often a good record of what was there first.
 date: 2026-08-21
+permalink: /articles/document-before-cleaning/
 ---
 
 Before any brush touches the cannon, record its condition. A short survey gives the team a shared starting point and makes later changes easier to explain.

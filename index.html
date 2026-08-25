@@ -20,7 +20,7 @@ description: Practical guides for safe, careful underwater cannon care.
     </div>
 
     <div class="article-cards">
-        {% assign home_articles = site.articles | sort: "date" | reverse %}
+        {% assign home_articles = site.pages | where: "is_article", true | sort: "date" | reverse %}
         {% for article in home_articles limit: 6 %}
         <article class="article-card">
             <p class="article-meta">{{ article.date | date: "%B %-d, %Y" }}</p>

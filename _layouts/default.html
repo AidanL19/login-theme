@@ -80,7 +80,7 @@
         </aside>
 
         <main class="content-column">
-            {% if page.collection == 'articles' %}
+            {% if page.is_article %}
             <article class="article-page">
                 <header class="article-header">
                     <a class="back-link" href="{{ '/' | relative_url }}"><i class="lni lni-arrow-left"></i> Field notes</a>
@@ -103,7 +103,7 @@
                 <h2 id="recent-articles-heading">Latest 25</h2>
             </div>
             <ol class="article-list">
-                {% assign recent_articles = site.articles | sort: "date" | reverse %}
+                {% assign recent_articles = site.pages | where: "is_article", true | sort: "date" | reverse %}
                 {% for article in recent_articles limit: 25 %}
                 <li>
                     <a href="{{ article.url | relative_url }}"{% if page.url == article.url %} aria-current="page"{% endif %}>{{ article.title }}</a>

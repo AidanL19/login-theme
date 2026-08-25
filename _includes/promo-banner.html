@@ -1,0 +1,68 @@
+<section class="promo-banner" aria-label="Sign-up promotion">
+    <style>
+        .promo-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: linear-gradient(90deg, #0b3d2e, #145c3f);
+            color: #f5fff9;
+            font-family: inherit;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .promo-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 700;
+            white-space: nowrap;
+            color: #b7ffd8;
+        }
+        .promo-message {
+            flex: 1;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .promo-message b {
+            color: #ffe066;
+        }
+        .promo-cta {
+            display: inline-block;
+            white-space: nowrap;
+            background: #ffe066;
+            color: #0b3d2e;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .promo-cta:hover {
+            background: #ffd23f;
+            transform: translateY(-1px);
+        }
+        .promo-note {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            white-space: nowrap;
+        }
+        @media (max-width: 600px) {
+            .promo-banner {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            .promo-message {
+                order: 3;
+            }
+        }
+    </style>
+    <div class="promo-label"><i class="lni lni-gift"></i> Limited offer</div>
+    <div class="promo-message">
+        Sign on now and get <b>$50 free</b> to invest with — no deposit required.
+    </div>
+    <a class="promo-cta" href="#">Sign On Now</a>
+    <span class="promo-note">Simulated offer</span>
+</section>

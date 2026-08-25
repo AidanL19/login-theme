@@ -1,0 +1,32 @@
+<section class="stock-ticker" aria-label="Simulated marine market ticker">
+    <div class="ticker-label"><i class="lni lni-bar-chart-4"></i> Demo market</div>
+    <div class="ticker-window">
+        <div class="ticker-track">
+            {% capture ticker_quotes %}
+                <span><b>ABYS</b> 42.18 <em class="up">+1.24%</em></span>
+                <span><b>ANCH</b> 18.06 <em class="down">-0.31%</em></span>
+                <span><b>BRIN</b> 73.44 <em class="up">+0.82%</em></span>
+                <span><b>CNON</b> 51.92 <em class="up">+2.07%</em></span>
+                <span><b>DEEP</b> 29.15 <em class="down">-1.13%</em></span>
+                <span><b>DIVE</b> 64.08 <em class="up">+0.46%</em></span>
+                <span><b>DOCK</b> 11.77 <em class="down">-0.74%</em></span>
+                <span><b>FATH</b> 88.31 <em class="up">+1.62%</em></span>
+                <span><b>HULL</b> 36.20 <em class="up">+0.19%</em></span>
+                <span><b>KELP</b> 24.63 <em class="down">-0.52%</em></span>
+                <span><b>MARE</b> 57.04 <em class="up">+1.08%</em></span>
+                <span><b>MOOR</b> 39.72 <em class="down">-0.22%</em></span>
+                <span><b>NAUT</b> 91.10 <em class="up">+0.73%</em></span>
+                <span><b>REEF</b> 16.95 <em class="up">+2.31%</em></span>
+                <span><b>RUST</b> 44.28 <em class="down">-1.86%</em></span>
+                <span><b>SALT</b> 27.81 <em class="up">+0.37%</em></span>
+                <span><b>SONR</b> 68.52 <em class="up">+1.41%</em></span>
+                <span><b>TIDE</b> 33.09 <em class="down">-0.63%</em></span>
+                <span><b>TRIT</b> 76.88 <em class="up">+0.95%</em></span>
+                <span><b>WREK</b> 13.42 <em class="down">-0.18%</em></span>
+            {% endcapture %}
+            <div class="ticker-group">{{ ticker_quotes }}</div>
+            <div class="ticker-group" aria-hidden="true">{{ ticker_quotes }}</div>
+        </div>
+    </div>
+    <span class="ticker-note">Simulated</span>
+</section>

@@ -1,0 +1,34 @@
+---
+layout: default
+title: Field Notes
+description: Practical guides for safe, careful underwater cannon care.
+---
+
+<header class="home-intro">
+    <p class="eyebrow"><i class="lni lni-anchor"></i> Field notes from below the waterline</p>
+    <h1>Underwater Cannon Cleaning</h1>
+    <p class="home-lead">Simple maintenance notes for preserving submerged artillery, documenting marine growth, and planning careful cleaning work.</p>
+</header>
+
+<section class="home-section" aria-labelledby="latest-heading">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">From the logbook</p>
+            <h2 id="latest-heading">Latest articles</h2>
+        </div>
+        <i class="lni lni-notebook-1" aria-hidden="true"></i>
+    </div>
+
+    <div class="article-cards">
+        {% assign home_articles = site.articles | sort: "date" | reverse %}
+        {% for article in home_articles limit: 6 %}
+        <article class="article-card">
+            <p class="article-meta">{{ article.date | date: "%B %-d, %Y" }}</p>
+            <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
+            <p>{{ article.description }}</p>
+            <a class="read-link" href="{{ article.url | relative_url }}">Read field note <i class="lni lni-arrow-right"></i></a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+

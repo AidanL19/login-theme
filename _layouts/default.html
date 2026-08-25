@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || 'dark';
+            var accent = localStorage.getItem('accent') || 'orange';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-accent', accent);
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/bootstrap/css/bootstrap.min.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css">
+    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid site-nav-wrap">
+            <div class="d-flex align-items-center gap-2">
+                <a href="{{ '/' | relative_url }}" aria-label="Underwater Cannon Cleaning home">
+                    <img class="nav-brand-avatar" src="{{ '/assets/images/me-gold-ring.webp' | relative_url }}" alt="Underwater Cannon Cleaning" width="40" height="40">
+                </a>
+                <a href="https://discord.gg/2mVdGHPTa3" class="text-decoration-none d-none d-md-inline-flex align-items-center gap-1">
+                    <span class="text-muted-light small">Join us on Discord!</span>
+                    <i class="lni lni-discord" aria-hidden="true"></i>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/@cameronmcnz?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://x.com/cameronmcnz" target="_blank" rel="noopener">Twitter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/cameronwmckenzie/" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
+                <div class="nav-tools d-flex align-items-center gap-3">
+                    <div class="theme-dots d-flex align-items-center" role="group" aria-label="Accent color">
+                        <button class="theme-dot" type="button" data-accent="purple" aria-label="Purple accent" aria-pressed="false"></button>
+                        <button class="theme-dot" type="button" data-accent="blue" aria-label="Blue accent" aria-pressed="false"></button>
+                        <button class="theme-dot" type="button" data-accent="green" aria-label="Green accent" aria-pressed="false"></button>
+                        <button class="theme-dot" type="button" data-accent="orange" aria-label="Orange accent" aria-pressed="false"></button>
+                        <button class="theme-dot" type="button" data-accent="rose" aria-label="Rose accent" aria-pressed="false"></button>
+                        <button class="theme-dot" type="button" data-accent="pink" aria-label="Pink accent" aria-pressed="false"></button>
+                    </div>
+                    <button class="btn btn-sm btn-outline-plain theme-toggle" type="button" data-theme-toggle
+                            aria-pressed="false" aria-label="Switch to dark mode" title="Toggle light and dark mode">
+                        <i class="lni lni-moon-half-right-5"></i>
+                    </button>
+                    <div id="nav-auth-controls" class="d-flex align-items-center gap-2"
+                         data-register-url="{{ '/auth/register.html' | relative_url }}"
+                         data-login-url="{{ '/auth/login.html' | relative_url }}"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% include stock-ticker.html %}
+
+    <div class="blog-shell">
+        <aside class="ad-rail" aria-label="Advertisements">
+            <a class="ad-unit" href="#sponsor" rel="sponsored">
+                <span class="ad-label">Advertisement</span>
+                <i class="lni lni-shield-2-check" aria-hidden="true"></i>
+                <strong>Trident Marine Coatings</strong>
+                <span>Low-impact protection below the waterline.</span>
+            </a>
+            <a class="ad-unit" href="#sponsor" rel="sponsored">
+                <span class="ad-label">Advertisement</span>
+                <i class="lni lni-camera-1" aria-hidden="true"></i>
+                <strong>DeepFrame Surveys</strong>
+                <span>Document every surface before you clean.</span>
+            </a>
+        </aside>
+
+        <main class="content-column">
+            {% if page.collection == 'articles' %}
+            <article class="article-page">
+                <header class="article-header">
+                    <a class="back-link" href="{{ '/' | relative_url }}"><i class="lni lni-arrow-left"></i> Field notes</a>
+                    <p class="eyebrow">{{ page.title }}</p>
+                    <h1>{{ page.heading | default: page.title }}</h1>
+                    {% if page.subheading %}<p class="article-subheading">{{ page.subheading }}</p>{% endif %}
+                    <p class="article-description">{{ page.description }}</p>
+                    <p class="article-meta"><i class="lni lni-calendar-days"></i> {{ page.date | date: "%B %-d, %Y" }}</p>
+                </header>
+                <div class="article-body">{{ content }}</div>
+            </article>
+            {% else %}
+                {{ content }}
+            {% endif %}
+        </main>
+
+        <aside class="article-rail" aria-labelledby="recent-articles-heading">
+            <div class="rail-heading">
+                <p class="eyebrow">The archive</p>
+                <h2 id="recent-articles-heading">Latest 25</h2>
+            </div>
+            <ol class="article-list">
+                {% assign recent_articles = site.articles | sort: "date" | reverse %}
+                {% for article in recent_articles limit: 25 %}
+                <li>
+                    <a href="{{ article.url | relative_url }}"{% if page.url == article.url %} aria-current="page"{% endif %}>{{ article.title }}</a>
+                    <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%b %-d, %Y" }}</time>
+                </li>
+                {% endfor %}
+            </ol>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div>Underwater Cannon Cleaning</div>
+        <div>Field notes for careful marine conservation.</div>
+    </footer>
+
+    <script src="{{ '/assets/bootstrap/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/auth/js/auth-config.js' | relative_url }}"></script>
+    <script src="{{ '/auth/js/auth.js' | relative_url }}"></script>
+    <script src="{{ '/auth/js/home.js' | relative_url }}"></script>
+</body>
+</html>

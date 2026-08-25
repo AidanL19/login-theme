@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-card">
+            <div data-auth-status class="alert" role="status" aria-live="polite" hidden></div>
+
+            <div data-signin-email-step>
+                <form data-signin-email-form novalidate>
+                    <label class="form-label" for="signin-email">Email address</label>
+                    <input
+                        class="form-control"
+                        id="signin-email"
+                        name="email"
+                        type="email"
+                        inputmode="email"
+                        autocomplete="email"
+                        maxlength="254"
+                        data-signin-email
+                        required
+                        autofocus
+                    >
+
+                    <button class="btn" type="submit" data-signin-submit>Sign In</button>
+                    <button class="btn btn-mock" type="button" data-mock-in hidden>Mock-In</button>
+                </form>
+            </div>
+
+            <div data-signin-code-step hidden>
+                <p>Enter the verification code sent to <strong data-signin-destination></strong>.</p>
+
+                <form data-signin-code-form novalidate>
+                    <label class="form-label" for="signin-code">Verification code</label>
+                    <input
+                        class="form-control ceg-auth-code"
+                        id="signin-code"
+                        name="code"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="one-time-code"
+                        pattern="[0-9]{6,8}"
+                        minlength="6"
+                        maxlength="8"
+                        data-signin-code
+                        required
+                    >
+
+                    <button class="btn" type="submit">Verify and Continue</button>
+                </form>
+
+                <div class="auth-links">
+                    <button class="link-btn" type="button" data-signin-change>Change email</button>
+                    <button class="link-btn" type="button" data-signin-resend>Resend code</button>
+                </div>
+            </div>
+
+            <p class="auth-help">
+                Don't have an account?
+                <a href="register.html" data-auth-register-link>Register</a>
+            </p>
+
+            <noscript>
+                <div class="alert alert-error">JavaScript is required for passwordless sign-in.</div>
+            </noscript>
+        </div>
+    </main>
+
+    <script src="js/auth-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-forms.js"></script>
+</body>
+</html>

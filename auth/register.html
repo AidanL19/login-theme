@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-card">
+            <div data-auth-status class="alert" role="status" aria-live="polite" hidden></div>
+
+            <div data-register-email-step>
+                <form data-register-email-form novalidate>
+                    <!--
+                        Optional registration attribution defaults.
+                        Leave blank to capture values from the URL automatically.
+                        URL query parameters take precedence over these defaults.
+
+                        Example campaign link:
+                        /auth/register.html?campaign_code=CLAUDE30&utm_source=linkedin&utm_medium=social
+                    -->
+                    <input type="hidden" data-register-campaign-code value="scrumtuous-claude">
+                    <input type="hidden" data-register-country value="">
+					<input type="hidden" data-register-personality value="scrumtuous">
+
+                    <label class="form-label" for="register-email">Email address</label>
+                    <input
+                        class="form-control"
+                        id="register-email"
+                        name="email"
+                        type="email"
+                        inputmode="email"
+                        autocomplete="email"
+                        maxlength="254"
+                        data-register-email
+                        required
+                        autofocus
+                    >
+
+                    <label class="form-check">
+                        <input type="checkbox" data-register-consent checked>
+                        I consent to a few friendly emails
+                    </label>
+
+                    <button class="btn" type="submit" data-register-submit>Register Now</button>
+                    <button class="btn btn-mock" type="button" data-mock-in hidden>Mock-In</button>
+                </form>
+            </div>
+
+            <div data-register-code-step hidden>
+                <p>Enter the verification code sent to <strong data-register-destination></strong>.</p>
+
+                <form data-register-code-form novalidate>
+                    <label class="form-label" for="register-code">Verification code</label>
+                    <input
+                        class="form-control ceg-auth-code"
+                        id="register-code"
+                        name="code"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="one-time-code"
+                        pattern="[0-9]{6,8}"
+                        minlength="6"
+                        maxlength="8"
+                        data-register-code
+                        required
+                    >
+
+                    <button class="btn" type="submit">Verify and Continue</button>
+                </form>
+
+                <div class="auth-links">
+                    <button class="link-btn" type="button" data-register-change>Change email</button>
+                    <button class="link-btn" type="button" data-register-resend>Resend code</button>
+                </div>
+            </div>
+
+            <p class="auth-help">
+                Already registered?
+                <a href="login.html" data-auth-signin-link>Sign in with an email code</a>
+            </p>
+
+            <noscript>
+                <div class="alert alert-error">JavaScript is required for passwordless registration.</div>
+            </noscript>
+        </div>
+    </main>
+
+    <script src="js/auth-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-forms.js"></script>
+</body>
+</html>

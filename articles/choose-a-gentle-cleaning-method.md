@@ -1,4 +1,6 @@
 ---
+layout: default
+is_article: true
 title: Choose a Gentle Cleaning Method
 description: Match the cleaning method to the goal instead of removing every trace of marine growth.
 heading: Clean Only What the Work Requires

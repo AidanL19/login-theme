@@ -1,4 +1,6 @@
 ---
+layout: default
+is_article: true
 title: Document Before You Clean
 description: A simple pre-cleaning survey keeps important surface details from being lost.
 heading: Start With a Careful Survey
